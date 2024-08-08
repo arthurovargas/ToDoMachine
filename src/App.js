@@ -4,6 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+
+      <ToDoItem/>
+      <ToDoItem/>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -22,4 +26,13 @@ function App() {
   );
 }
 
+function ToDoItem(){
+  return(
+    <li>
+      <span>V</span>
+      <p>Redactar correo</p>
+      <span>X</span>
+    </li>
+  );
+}
 export default App;
