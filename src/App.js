@@ -1,10 +1,8 @@
-import logo from './platzi.webp';
 import { ToDoCounter } from './ToDoCounter';
 import { ToDoSearch } from './ToDoSearch';
 import { ToDoList } from './ToDoList';
 import { ToDoItem } from './ToDoItem';
 import { CreateToDoButton } from './CreateToDoButton';
-import './App.css';
 
 const defaultToDo = [
   {
@@ -42,20 +40,6 @@ function App() {
       
       <CreateToDoButton/>
       
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita el archivo <code>src/App.js</code> y guarda para recargar.
-        </p>
-        <a
-          className="App-link"
-          href="https://platzi.com/reactjs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </>
   );
 }
