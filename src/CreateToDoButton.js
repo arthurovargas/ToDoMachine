@@ -1,6 +1,6 @@
 function CreateToDoButton(){
     return(
-        <button>+</button>
+        <button>Create Task</button>
     )
 }
 export { CreateToDoButton }

@@ -3,6 +3,9 @@ import { ToDoSearch } from './ToDoSearch';
 import { ToDoList } from './ToDoList';
 import { ToDoItem } from './ToDoItem';
 import { CreateToDoButton } from './CreateToDoButton';
+import { CreateToDoInput } from './CreateToDoInput'; 
+import { LeftContainer } from './LeftContainer'; 
+import { RightContainer } from './RightContainer'; 
 
 const defaultToDo = [
   {
@@ -23,23 +26,28 @@ function App() {
   return (
     <>
       
-      <ToDoCounter completed={5} total={10}/>
-      <ToDoSearch/>
-      
-      <ToDoList>
-        {/* Renderización de nuevo array genrado con mpa(),
-        retornando un componente ToDoItem con el texto del ToDo como key */}
-        {defaultToDo.map(toDo => (
-          // ToDoItem recibe la prop.text y prop.completed
-          <ToDoItem 
-          key={toDo.text} 
-          text={toDo.text} 
-          completed={toDo.completed} />
-        ))}
-      </ToDoList>
-      
-      <CreateToDoButton/>
-      
+      <LeftContainer>
+        <CreateToDoInput/>
+        <CreateToDoButton/>
+      </LeftContainer>
+
+      <RightContainer>
+        <ToDoCounter completed={5} total={10}/>
+        <ToDoSearch/>
+        
+        <ToDoList>
+          {/* Renderización de nuevo array generado con map(),
+          retornando un componente ToDoItem con el texto del ToDo como key */}
+          {defaultToDo.map(toDo => (
+            // ToDoItem recibe la prop.text y prop.completed
+            <ToDoItem 
+            key={toDo.text} 
+            text={toDo.text} 
+            completed={toDo.completed} />
+          ))}
+        </ToDoList>     
+      </RightContainer>
+            
     </>
   );
 }
