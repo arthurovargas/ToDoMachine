@@ -1,6 +1,8 @@
+import './LeftContainer.css'
+
 function LeftContainer(props){
     return(
-        <div>{props.children}</div>
+        <div className="create-task">{props.children}</div>
     )
 }
 export { LeftContainer }

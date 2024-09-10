@@ -5,7 +5,8 @@ import { ToDoItem } from './ToDoItem';
 import { CreateToDoButton } from './CreateToDoButton';
 import { CreateToDoInput } from './CreateToDoInput'; 
 import { LeftContainer } from './LeftContainer'; 
-import { RightContainer } from './RightContainer'; 
+import { RightContainer } from './RightContainer';
+import { Container } from './Container';
 
 const defaultToDo = [
   {
@@ -26,28 +27,29 @@ function App() {
   return (
     <>
       
-      <LeftContainer>
-        <CreateToDoInput/>
-        <CreateToDoButton/>
-      </LeftContainer>
+      <Container>
+        <LeftContainer>
+          <CreateToDoInput/>
+          <CreateToDoButton/>
+        </LeftContainer>
 
-      <RightContainer>
-        <ToDoCounter completed={5} total={10}/>
-        <ToDoSearch/>
-        
-        <ToDoList>
-          {/* Renderización de nuevo array generado con map(),
-          retornando un componente ToDoItem con el texto del ToDo como key */}
-          {defaultToDo.map(toDo => (
-            // ToDoItem recibe la prop.text y prop.completed
-            <ToDoItem 
-            key={toDo.text} 
-            text={toDo.text} 
-            completed={toDo.completed} />
-          ))}
-        </ToDoList>     
-      </RightContainer>
-            
+        <RightContainer>
+          <ToDoCounter completed={5} total={10}/>
+          <ToDoSearch/>
+          
+          <ToDoList>
+            {/* Renderización de nuevo array generado con map(),
+            retornando un componente ToDoItem con el texto del ToDo como key */}
+            {defaultToDo.map(toDo => (
+              // ToDoItem recibe la prop.text y prop.completed
+              <ToDoItem 
+              key={toDo.text} 
+              text={toDo.text} 
+              completed={toDo.completed} />
+            ))}
+          </ToDoList>     
+        </RightContainer>
+      </Container>
     </>
   );
 }
