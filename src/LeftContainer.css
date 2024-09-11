@@ -4,10 +4,11 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 100vh;      /* Hace que el contenedor ocupe el 100% de la altura de la pantalla */
+    /* height: 100vh;      Hace que el contenedor ocupe el 100% de la altura de la pantalla */
     display: flex;      /* Utilizamos flexbox para alinear el contenido */
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center;  /* Centra el contenido verticalmente */
     background-color: #f0f0f0; /* Color de fondo de ejemplo */
     padding: 20px;      /* Espaciado interno */
+    flex-direction: column;
   }
