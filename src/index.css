@@ -1,13 +1,15 @@
 body {
-    /* Fondo degradado con tres colores */
-    background: linear-gradient(
-      to right, 
-      rgba(172, 182, 29, 0.5), /* Rosado suave */
-      rgba(255, 255, 255, 0.5), /* Blanco en el centro */
-      rgba(62, 172, 159, 0.5)  /* Crema suave */
-    );
-    
-    /* Aplicar el degradado a toda la ventana */
-     margin: 0;
-    font-family: 'Arial', sans-serif;
+  /* Fondo degradado con tres colores */
+  background: linear-gradient(
+    to right, 
+    rgba(172, 182, 29, 0.5), /* Rosado suave */
+    rgba(255, 255, 255, 0.5), /* Blanco en el centro */
+    rgba(62, 172, 159, 0.5)  /* Crema suave */
+  );
+  
+  /* Aplicar el degradado a toda la ventana */
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  margin: 0;          /* Elimina márgenes predeterminados del body */
+  padding: 0;         /* Elimina rellenos predeterminados */
 }

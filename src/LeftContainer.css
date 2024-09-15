@@ -1,14 +1,11 @@
 .create-task {
-    width: 30%;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* height: 100vh;      Hace que el contenedor ocupe el 100% de la altura de la pantalla */
-    display: flex;      /* Utilizamos flexbox para alinear el contenido */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center;  /* Centra el contenido verticalmente */
-    background-color: #f0f0f0; /* Color de fondo de ejemplo */
-    padding: 20px;      /* Espaciado interno */
-    flex-direction: column;
-  }
+width: 30%;
+height: 50%;
+background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+display: flex;      /* Utilizamos flexbox para alinear el contenido */
+justify-content: center; /* Centra el contenido horizontalmente */
+align-items: center;  /* Centra el contenido verticalmente */
+flex-direction: column;
+}
