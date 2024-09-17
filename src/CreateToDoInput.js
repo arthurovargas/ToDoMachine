@@ -1,7 +1,8 @@
 function CreateToDoInput(){
     return(
         <>
-            <p>Task name</p>
+            <h1>Create new task</h1>
+            <h2>Task Name</h2>
             <input placeholder="Type the name"/>
         </>
     )

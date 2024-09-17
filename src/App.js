@@ -31,6 +31,7 @@ function App() {
         <LeftContainer>
           <CreateToDoInput/>
           <CreateToDoButton/>
+          <img alt="Mujer sentada con portatil" src="./Img.jpg" />
         </LeftContainer>
 
         <RightContainer>
@@ -47,7 +48,7 @@ function App() {
               text={toDo.text} 
               completed={toDo.completed} />
             ))}
-          </ToDoList>     
+          </ToDoList>  
         </RightContainer>
       </Container>
     </>
