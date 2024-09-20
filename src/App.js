@@ -7,6 +7,8 @@ import { CreateToDoInput } from './CreateToDoInput';
 import { LeftContainer } from './LeftContainer'; 
 import { RightContainer } from './RightContainer';
 import { Container } from './Container';
+import { Image } from './Image';
+
 
 const defaultToDo = [
   {
@@ -31,7 +33,7 @@ function App() {
         <LeftContainer>
           <CreateToDoInput/>
           <CreateToDoButton/>
-          <img alt="Mujer sentada con portatil" src="./Img.jpg" />
+          <Image/>
         </LeftContainer>
 
         <RightContainer>

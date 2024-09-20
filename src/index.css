@@ -9,7 +9,7 @@ body {
   
   /* Aplicar el degradado a toda la ventana */
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;          /* Elimina márgenes predeterminados del body */
   padding: 0;         /* Elimina rellenos predeterminados */
 }
