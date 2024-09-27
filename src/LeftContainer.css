@@ -1,7 +1,7 @@
 .create-task {
   width: 30%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(252, 251, 247);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;      /* Utilizamos flexbox para alinear el contenido */
@@ -11,13 +11,14 @@
 }
 
 .create-task h1 {
-  font-size: 24px;
+  font-size: 30px;
   color: rgb(56, 31, 59);
 }
 
 .create-task h2 {
   font-size: 14px;
   color: rgb(39, 19, 44);
+  margin-bottom: 0px;
 }
 
 .create-task input {
