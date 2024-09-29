@@ -1,10 +1,14 @@
-import './ToDoCounter.css'
 
 function ToDoCounter({total,  completed}){
     return (
-        <h1>
-            Has completado {completed} de {total} tareas
-        </h1>
+        <>
+            <h1>
+                Your task
+            </h1>
+            <h2>
+                Completaste {completed} de {total} tareas
+            </h2>
+        </>
     )
 }
 

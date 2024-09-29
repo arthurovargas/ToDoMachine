@@ -50,7 +50,7 @@ function App() {
               text={toDo.text} 
               completed={toDo.completed} />
             ))}
-          </ToDoList>  
+          </ToDoList>
         </RightContainer>
       </Container>
     </>

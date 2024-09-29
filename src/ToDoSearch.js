@@ -1,6 +1,6 @@
 function ToDoSearch(){
     return (
-        <input placeholder="Listado de ToDos"/>
+        <input type="search" placeholder="Search..."/>
     )
 }
 

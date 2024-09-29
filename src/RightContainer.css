@@ -1,7 +1,59 @@
 .task-list {
-  width: 30%;
-  height: 100vh;
+  width: 35%;
+  height: 90vh;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;      /* Utilizamos flexbox para alinear el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center;  /* Centra el contenido verticalmente */
+  flex-direction: column;
+}
+
+.task-list h1{
+  font-size: 50px;
+  color: rgb(56, 31, 59);
+}
+
+.task-list h2 {
+  font-size: 14px;
+  color: rgb(39, 19, 44);
+}
+
+.task-list input[type="search"] {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task-list ul {
+  list-style: none;
+  width: 90%;
+  padding: 0;
+}
+
+.task-list li {
+  width: 100%;
+  display: flex;      /* Utilizamos flexbox para alinear el contenido */
+  justify-content: space-between; /* Centra el contenido horizontalmente */
+  align-items: center;  /* Centra el contenido verticalmente */
+  border: 1px solid #ccc;
+  padding: 4px 0px 4px 0px;
+}
+
+li span:first-child {
+  /* Alinear la letra V a la izquierda */
+  padding-left: 10px; /* Espacio de 1cm a la derecha de la letra V */
+}
+
+li p {
+  flex-grow: 1;
+  padding-left: 16px;
+}
+
+li span:last-child {
+  /* Alinear la letra X a la derecha */
+  padding-right: 10px;
 }
