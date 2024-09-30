@@ -21,7 +21,7 @@ const defaultToDo = [
   },
   {
     text: "Tarea 3",
-    completed: true
+    completed: false
   }
 ]
 

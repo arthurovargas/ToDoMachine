@@ -16,12 +16,12 @@
 }
 
 .task-list h2 {
-  font-size: 14px;
+  font-size: 18px;
   color: rgb(39, 19, 44);
 }
 
 .task-list input[type="search"] {
-  width: 50%;
+  width: 80%;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -41,6 +41,12 @@
   align-items: center;  /* Centra el contenido verticalmente */
   border: 1px solid #ccc;
   padding: 4px 0px 4px 0px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.task-list ul :hover {
+  background-color: #FCFDFD;
 }
 
 li span:first-child {
@@ -55,5 +61,9 @@ li p {
 
 li span:last-child {
   /* Alinear la letra X a la derecha */
-  padding-right: 10px;
+  padding-right: 20px;
+}
+
+.Icon-check--active {
+  color: chartreuse;
 }
