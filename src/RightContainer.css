@@ -64,6 +64,27 @@ li span:last-child {
   padding-right: 20px;
 }
 
+.Icon-check{
+  cursor: pointer; /* Para indicar que es clicable */
+  color: black;
+  font-weight: bold;
+}
+
 .Icon-check--active {
   color: chartreuse;
+}
+
+.Icon-delete {
+  color: black; /* Color por defecto del ícono */
+  cursor: pointer; /* Para indicar que es clicable */
+  font-weight: bold;
+}
+
+.Icon-delete:hover {
+  color: red; /* Color cuando el cursor está encima del elemento */
+}
+
+.TodoItem-p--complete {
+  text-decoration:line-through;
+  color: #838a8a;
 }
