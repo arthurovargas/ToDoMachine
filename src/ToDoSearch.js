@@ -1,16 +1,21 @@
+import React from 'react'
+
 function ToDoSearch(){
+    const [searchValue, setSearchValue] = React.useState('');
+    console.log('Buscando tareas de:' + searchValue)
+    
     return (
         <input 
             type="search" 
             placeholder="Search..."
             className="ToDoSearch"
+            value={searchValue}
             onChange={
                 (event)=>{
-                    console.log('ToDoSearch');
-                    console.log(event.target.value);
+                    setSearchValue(event.target.value);
                 }
             }
-        />
+        /> 
     )
 }
 
