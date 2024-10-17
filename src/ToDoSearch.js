@@ -1,9 +1,7 @@
-import React from 'react'
-
-function ToDoSearch(){
-    const [searchValue, setSearchValue] = React.useState('');
-    console.log('Buscando tareas de:' + searchValue)
-    
+function ToDoSearch({
+    searchValue,
+    setSearchValue,
+}){
     return (
         <input 
             type="search" 

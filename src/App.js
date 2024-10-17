@@ -8,7 +8,7 @@ import { LeftContainer } from './LeftContainer';
 import { RightContainer } from './RightContainer';
 import { Container } from './Container';
 import { Image } from './Image';
-
+import React from 'react'
 
 const defaultToDo = [
   {
@@ -26,6 +26,9 @@ const defaultToDo = [
 ]
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState('');
+  const [toDo, setToDo] = React.useState(defaultToDo);
+    
   return (
     <>
       
@@ -37,8 +40,15 @@ function App() {
         </LeftContainer>
 
         <RightContainer>
-          <ToDoCounter completed={5} total={10}/>
-          <ToDoSearch/>
+          <ToDoCounter 
+            completed={toDo.filter(toDo => (toDo.completed)).length} 
+            total={toDo.length}
+          />
+          <ToDoSearch 
+
+            searchValue={searchValue} 
+            setSearchValue={setSearchValue}
+          />
           
           <ToDoList>
             {/* Renderización de nuevo array generado con map(),
