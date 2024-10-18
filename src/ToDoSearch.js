@@ -11,6 +11,7 @@ function ToDoSearch({
             onChange={
                 (event)=>{
                     setSearchValue(event.target.value);
+                    console.log("ToDoSearch looking for " + searchValue)
                 }
             }
         /> 

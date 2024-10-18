@@ -27,7 +27,8 @@ const defaultToDo = [
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
-  const [toDo, setToDo] = React.useState(defaultToDo);
+  const [toDos, setToDo] = React.useState(defaultToDo);
+  const searchedToDos = toDos.filter(toDo => (toDo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())))
     
   return (
     <>
@@ -41,11 +42,11 @@ function App() {
 
         <RightContainer>
           <ToDoCounter 
-            completed={toDo.filter(toDo => (toDo.completed)).length} 
-            total={toDo.length}
+          // Filter of task completed
+            completed={toDos.filter(toDo => (toDo.completed)).length} 
+            total={toDos.length}
           />
           <ToDoSearch 
-
             searchValue={searchValue} 
             setSearchValue={setSearchValue}
           />
@@ -53,7 +54,7 @@ function App() {
           <ToDoList>
             {/* Renderización de nuevo array generado con map(),
             retornando un componente ToDoItem con el texto del ToDo como key */}
-            {defaultToDo.map(toDo => (
+            {searchedToDos.map(toDo => (
               // ToDoItem recibe la prop.text y prop.completed
               <ToDoItem 
               key={toDo.text} 
