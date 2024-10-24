@@ -29,7 +29,22 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
   const [toDos, setToDo] = React.useState(defaultToDo);
   const searchedToDos = toDos.filter(toDo => (toDo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())))
-    
+  const completeToDoFuntion = (text) => {
+    // Usa como key el texto dentro del objeto y lo compara devolviendo 
+    // el indice y asignado true (completado)
+    const newToDos = [...toDos] // Copy of defaultToDo
+    const indexToDo = newToDos.findIndex(toDo => toDo.text === text)
+    newToDos[indexToDo].completed = true 
+    setToDo(newToDos)
+  }
+  const deleteToDoFuntion = (text) => {
+    // 
+    const newToDos = [...toDos] // Copy of defaultToDo
+    const indexToDo = newToDos.findIndex(toDo => toDo.text === text)
+    delete newToDos[indexToDo] 
+    setToDo(newToDos)
+  }
+
   return (
     <>
       
@@ -57,9 +72,12 @@ function App() {
             {searchedToDos.map(toDo => (
               // ToDoItem recibe la prop.text y prop.completed
               <ToDoItem 
-              key={toDo.text} 
-              text={toDo.text} 
-              completed={toDo.completed} />
+              key = {toDo.text} 
+              text = {toDo.text} 
+              completed = {toDo.completed}
+              onComplete = {() => completeToDoFuntion(toDo.text)}
+              onDelete = {() => deleteToDoFuntion(toDo.text)}
+              />
             ))}
           </ToDoList>
         </RightContainer>
