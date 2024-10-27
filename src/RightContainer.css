@@ -64,10 +64,15 @@ li span:last-child {
   padding-right: 20px;
 }
 
+.Icon{
+  width: 24px;
+  height: 24px;
+}
+
 .Icon-check{
   cursor: pointer; /* Para indicar que es clicable */
-  color: black;
   font-weight: bold;
+  padding-left: 16px;
 }
 
 .Icon-check--active {
@@ -78,6 +83,7 @@ li span:last-child {
   color: black; /* Color por defecto del ícono */
   cursor: pointer; /* Para indicar que es clicable */
   font-weight: bold;
+  padding-right: 16px;
 }
 
 .Icon-delete:hover {
