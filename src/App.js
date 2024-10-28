@@ -28,29 +28,38 @@ import React from 'react'
 // const convertedToDos = JSON.stringify(defaultToDo);
 // localStorage.setItem("TODOS_V1", convertedToDos);
 
-function App() {
-  // Valores traidos del LocaStorage y convertidos de String a Array
-  const localStorageToDos = localStorage.getItem("TODOS_V1");
-  let parsedToDos;
+function useLocalStorage (itemName, initialValue) {
+  // useLocalStorage ABSTRAE todo código que se 
+  // conecta con localStorage
 
+  // Valores traidos del LocaStorage y convertidos de String a Array
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItems;
+  
   // Condicional para validar que existen ToDos, en caso de
   // que no exitan en el localStorage se asigna un Array vacio
-  if (!localStorageToDos){
-    localStorage.setItem("TODOS_V1", '[]')
-    parsedToDos = [];
+  if (!localStorageItem){
+    localStorage.setItem(itemName, initialValue)
+    parsedItems = [];
   } else{
-    parsedToDos = JSON.parse(localStorageToDos)
+    parsedItems = JSON.parse(localStorageItem)
   }
 
-  const [searchValue, setSearchValue] = React.useState('');
-  const [toDos, setToDo] = React.useState(parsedToDos);
-  const searchedToDos = toDos.filter(toDo => (toDo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())))
+  const [items, setItem] = React.useState(parsedItems);
+
+    // Actualizador de ToDos en el estado y localStorage
+    const updatedItems = (newItems) => {
+      localStorage.setItem(itemName, JSON.stringify(newItems))
+      setItem(newItems)
+    }
   
-  // Actualizador de ToDos en el estado y localStorage
-  const updatedToDos = (newToDos) => {
-    localStorage.setItem("TODOS_V1", JSON.stringify(newToDos))
-    setToDo(newToDos)
-  }
+  return [items, updatedItems]
+} 
+
+function App() {
+  const [searchValue, setSearchValue] = React.useState('');
+  const [toDos, updatedToDos] = useLocalStorage("TODOS_V1", [])
+  const searchedToDos = toDos.filter(toDo => (toDo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())))
 
   const completeToDoFuntion = (text) => {
     // Usa como key el texto dentro del objeto y lo compara devolviendo 
