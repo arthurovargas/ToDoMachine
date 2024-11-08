@@ -1,5 +1,23 @@
 import React from 'react'
 
+// const defaultToDo = [
+//   {
+//     text: "Tarea 1",
+//     completed: true
+//   },
+//   {
+//     text: "Tarea 2",
+//     completed: true
+//   },
+//   {
+//     text: "Tarea 3",
+//     completed: false
+//   }
+// ]
+
+// const convertedToDos = JSON.stringify(defaultToDo);
+// localStorage.setItem("TODOS_V1", convertedToDos);
+
 function useLocalStorage (itemName, initialValue) {
     // useLocalStorage ABSTRAE todo código que se 
     // conecta con localStorage
