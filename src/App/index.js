@@ -4,7 +4,12 @@ import React from 'react'
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
-  const [toDos, updatedToDos] = useLocalStorage("TODOS_V1", [])
+  const {
+    items: toDos, 
+    updatedItems: updatedToDos,
+    error,
+    loading,
+  } = useLocalStorage("TODOS_V1", [])
   const searchedToDos = toDos.filter(toDo => (toDo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())))
 
   const completeToDoFuntion = (text) => {
@@ -26,12 +31,14 @@ function App() {
 
   return (
     <UserInterfaceApp
-    toDos={toDos}
-    searchValue={searchValue}
-    setSearchValue={setSearchValue}
-    searchedToDos={searchedToDos}
-    completeToDoFuntion={completeToDoFuntion}
-    deleteToDoFuntion={deleteToDoFuntion}
+      loading={loading}
+      error={error}
+      toDos={toDos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedToDos={searchedToDos}
+      completeToDoFuntion={completeToDoFuntion}
+      deleteToDoFuntion={deleteToDoFuntion}
     />
   )
 }

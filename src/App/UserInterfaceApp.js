@@ -10,6 +10,8 @@ import { Container } from './Container';
 import { Image } from '../LeftContainer/Image';
 
 function UserInterfaceApp ({
+    loading,
+    error,
     toDos,
     searchValue,
     setSearchValue,
@@ -39,6 +41,10 @@ function UserInterfaceApp ({
                 />
                 
                 <ToDoList>
+                {loading && <p>Estamos cargando ...</p>}
+                {error && <p>Hubo un error!!</p>}
+                {(!loading && searchedToDos.length === 0) && <p>Crea tu primera tarea!!</p>}
+
                 {/* Renderización de nuevo array generado con map(),
                 retornando un componente ToDoItem con el texto del ToDo como key */}
                 {searchedToDos.map(toDo => (
