@@ -26,24 +26,26 @@ function useLocalStorage (itemName, initialValue) {
     const [error, setError] = React.useState(false);
 
     React.useEffect(()=>{
-      try {
-        // Valores traidos del LocaStorage y convertidos de String a Array
-        const localStorageItem = localStorage.getItem(itemName);
-        let parsedItems;
-        // Condicional para validar que existen ToDos, en caso de
-        // que no exitan en el localStorage se asigna un Array vacio
-        if (!localStorageItem){
-          localStorage.setItem(itemName, initialValue)
-          parsedItems = [];
-        } else{
-          parsedItems = JSON.parse(localStorageItem)
-          setItem(parsedItems)
+      setTimeout(() => { 
+        try {
+          // Valores traidos del LocaStorage y convertidos de String a Array
+          const localStorageItem = localStorage.getItem(itemName);
+          let parsedItems;
+          // Condicional para validar que existen ToDos, en caso de
+          // que no exitan en el localStorage se asigna un Array vacio
+          if (!localStorageItem){
+            localStorage.setItem(itemName, initialValue)
+            parsedItems = [];
+          } else{
+            parsedItems = JSON.parse(localStorageItem)
+            setItem(parsedItems)
+          } 
+          setLoading(false)
+        } catch (error) {
+          setLoading(false)
+          setError(error)
         } 
-        setLoading(false)
-      } catch (error) {
-        setLoading(false)
-        setError(error)
-      }
+      }, 2000)
     }, [])
   
       // Actualizador de ToDos en el estado y localStorage

@@ -7,6 +7,9 @@ import { CreateToDoInput } from '../LeftContainer/CreateToDoInput';
 import { LeftContainer } from '../LeftContainer'; 
 import { RightContainer } from '../RightContainer';
 import { Container } from './Container';
+import { ToDosLoading } from '../RightContainer/ToDosLoading';
+import { ToDosError } from '../RightContainer/ToDosError';
+import { EmptyToDos } from '../RightContainer/EmptyToDos';
 import { Image } from '../LeftContainer/Image';
 
 function UserInterfaceApp ({
@@ -41,9 +44,9 @@ function UserInterfaceApp ({
                 />
                 
                 <ToDoList>
-                {loading && <p>Estamos cargando ...</p>}
-                {error && <p>Hubo un error!!</p>}
-                {(!loading && searchedToDos.length === 0) && <p>Crea tu primera tarea!!</p>}
+                {loading && <ToDosLoading/>}
+                {error && <ToDosError/>}
+                {(!loading && searchedToDos.length === 0) && <EmptyToDos/>}
 
                 {/* Renderización de nuevo array generado con map(),
                 retornando un componente ToDoItem con el texto del ToDo como key */}
