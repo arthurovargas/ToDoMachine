@@ -1,6 +1,6 @@
 function ToDosLoading() {
   return (
-    <div>ToDosLoading</div>
+    <p>Cargando!!</p>
   )
 }
 

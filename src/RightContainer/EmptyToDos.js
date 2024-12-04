@@ -1,6 +1,6 @@
 function EmptyToDos() {
   return (
-    <div>EmptyToDos</div>
+    <p>Crea tu primera tarea!!</p>
   )
 }
 
