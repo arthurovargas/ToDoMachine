@@ -44,7 +44,13 @@ function UserInterfaceApp ({
                 />
                 
                 <ToDoList>
-                {loading && <ToDosLoading/>}
+                {loading && (
+                    <>
+                        <ToDosLoading/>
+                        <ToDosLoading/>
+                        <ToDosLoading/>
+                    </>
+                )}
                 {error && <ToDosError/>}
                 {(!loading && searchedToDos.length === 0) && <EmptyToDos/>}
 
