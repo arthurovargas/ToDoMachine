@@ -45,7 +45,7 @@ function useLocalStorage (itemName, initialValue) {
           setLoading(false)
           setError(error)
         } 
-      }, 2000)
+      }, 1000)
     }, [])
   
       // Actualizador de ToDos en el estado y localStorage

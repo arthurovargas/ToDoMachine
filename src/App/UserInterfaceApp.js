@@ -11,18 +11,17 @@ import { ToDosLoading } from '../RightContainer/ToDosLoading';
 import { ToDosError } from '../RightContainer/ToDosError';
 import { EmptyToDos } from '../RightContainer/EmptyToDos';
 import { Image } from '../LeftContainer/Image';
+import { TodoContext } from '../TodoContext';
+import React from 'react'
 
-function UserInterfaceApp ({
-    loading,
-    error,
-    toDos,
-    searchValue,
-    setSearchValue,
-    searchedToDos,
-    completeToDoFuntion,
-    deleteToDoFuntion,
-})
-{
+function UserInterfaceApp (){
+    const {
+        loading,
+        error,
+        searchedToDos,
+        completeToDoFuntion,
+        deleteToDoFuntion,
+    } = React.useContext(TodoContext)
     return(
         <>
             <Container>
@@ -33,44 +32,36 @@ function UserInterfaceApp ({
             </LeftContainer>
         
             <RightContainer>
-                <ToDoCounter 
-                // Filter of task completed
-                completed={toDos.filter(toDo => (toDo.completed)).length} 
-                total={toDos.length}
-                />
-                <ToDoSearch 
-                searchValue={searchValue} 
-                setSearchValue={setSearchValue}
-                />
-                
+                <ToDoCounter/>
+                <ToDoSearch/>
                 <ToDoList>
-                {loading && (
-                    <>
+                    {loading && (
+                        <>
                         <ToDosLoading/>
                         <ToDosLoading/>
                         <ToDosLoading/>
-                    </>
-                )}
-                {error && <ToDosError/>}
-                {(!loading && searchedToDos.length === 0) && <EmptyToDos/>}
+                        </>
+                    )}
+                    {error && <ToDosError/>}
+                    {(!loading && searchedToDos.length === 0) && <EmptyToDos/>}
 
-                {/* Renderización de nuevo array generado con map(),
-                retornando un componente ToDoItem con el texto del ToDo como key */}
-                {searchedToDos.map(toDo => (
-                    // ToDoItem recibe la prop.text y prop.completed
-                    <ToDoItem 
-                    key = {toDo.text} 
-                    text = {toDo.text} 
-                    completed = {toDo.completed}
-                    onComplete = {() => completeToDoFuntion(toDo.text)}
-                    onDelete = {() => deleteToDoFuntion(toDo.text)}
-                    />
-                ))}
-                </ToDoList>
+                    {/* Renderización de nuevo array generado con map(),
+                    retornando un componente ToDoItem con el texto del ToDo como key */}
+                    {searchedToDos.map(toDo => (
+                        // ToDoItem recibe la prop.text y prop.completed
+                        <ToDoItem 
+                        key = {toDo.text} 
+                        text = {toDo.text} 
+                        completed = {toDo.completed}
+                        onComplete = {() => completeToDoFuntion(toDo.text)}
+                        onDelete = {() => deleteToDoFuntion(toDo.text)}
+                        />
+                    ))}
+                </ToDoList>                
             </RightContainer>
             </Container>
         </>
-      )
+        )
 }
 
 export { UserInterfaceApp }
