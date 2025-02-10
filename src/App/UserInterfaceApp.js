@@ -1,18 +1,19 @@
-import { ToDoCounter } from '../RightContainer/ToDoCounter';
-import { ToDoSearch } from '../RightContainer/ToDoSearch';
-import { ToDoList } from '../RightContainer/ToDoList';
-import { ToDoItem } from '../RightContainer/ToDoItem';
+import React from 'react';
+import { LeftContainer } from '../LeftContainer';
 import { CreateToDoButton } from '../LeftContainer/CreateToDoButton';
-import { CreateToDoInput } from '../LeftContainer/CreateToDoInput'; 
-import { LeftContainer } from '../LeftContainer'; 
-import { RightContainer } from '../RightContainer';
-import { Container } from './Container';
-import { ToDosLoading } from '../RightContainer/ToDosLoading';
-import { ToDosError } from '../RightContainer/ToDosError';
-import { EmptyToDos } from '../RightContainer/EmptyToDos';
+import { CreateToDoInput } from '../LeftContainer/CreateToDoInput';
 import { Image } from '../LeftContainer/Image';
+import { RightContainer } from '../RightContainer';
+import { EmptyToDos } from '../RightContainer/EmptyToDos';
+import { ToDoCounter } from '../RightContainer/ToDoCounter';
+import { ToDoItem } from '../RightContainer/ToDoItem';
+import { ToDoList } from '../RightContainer/ToDoList';
+import { ToDoSearch } from '../RightContainer/ToDoSearch';
+import { ToDosError } from '../RightContainer/ToDosError';
+import { ToDosLoading } from '../RightContainer/ToDosLoading';
 import { TodoContext } from '../TodoContext';
-import React from 'react'
+import { Container } from './Container';
+import { Modal } from '../Modal';
 
 function UserInterfaceApp (){
     const {
@@ -21,6 +22,8 @@ function UserInterfaceApp (){
         searchedToDos,
         completeToDoFuntion,
         deleteToDoFuntion,
+        openModal,
+        setOpenModal,
     } = React.useContext(TodoContext)
     return(
         <>
@@ -28,6 +31,12 @@ function UserInterfaceApp (){
             <LeftContainer>
                 <CreateToDoInput/>
                 <CreateToDoButton/>
+                {openModal && (
+                        <Modal>
+                            Funcion para agregar ToDos
+                        </Modal>
+                    )
+                }
                 <Image/>
             </LeftContainer>
         
@@ -64,4 +73,5 @@ function UserInterfaceApp (){
         )
 }
 
-export { UserInterfaceApp }
+export { UserInterfaceApp };
+
