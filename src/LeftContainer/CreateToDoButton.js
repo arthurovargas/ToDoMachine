@@ -1,15 +1,20 @@
-import './CreateToDoButton.css'
+import PropTypes from 'prop-types';
+import './CreateToDoButton.css';
 
-function CreateToDoButton(){
-    return(
-        <button className="CreatedToDoButton"
-        onClick={
-            (event)=>{
-                console.log('Create Task Button clicked')
-                console.log(event)
-            }
-        }
-        >Create Task</button>
-    )
+function CreateToDoButton({ setOpenModal }) {
+    return (
+        <button 
+            className="CreateToDoButton"
+            onClick={() => setOpenModal(prevState => !prevState)}
+            aria-label="Create Task"
+        >
+            Create Task
+        </button>
+    );
 }
-export { CreateToDoButton }
+
+CreateToDoButton.propTypes = {
+    setOpenModal: PropTypes.func.isRequired,
+};
+
+export { CreateToDoButton };

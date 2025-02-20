@@ -30,7 +30,7 @@ function UserInterfaceApp (){
             <Container>
             <LeftContainer>
                 <CreateToDoInput/>
-                <CreateToDoButton/>
+                <CreateToDoButton setOpenModal={setOpenModal}/>
                 {openModal && (
                         <Modal>
                             Funcion para agregar ToDos
