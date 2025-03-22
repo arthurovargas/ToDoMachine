@@ -6,7 +6,6 @@ const TodoContext = React.createContext();
 function TodoProvider({children}){
 
     const [searchValue, setSearchValue] = React.useState('');
-    const [openModal, setOpenModal] = React.useState(true); // false default modal
     const {
       items: toDos, 
       updatedItems: updatedToDos,
@@ -49,8 +48,6 @@ function TodoProvider({children}){
         deleteToDoFuntion,
         completedToDos,
         totalToDos,
-        openModal,
-        setOpenModal,
       }}> 
         {children}
       </TodoContext.Provider>

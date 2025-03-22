@@ -1,20 +1,19 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import './CreateToDoButton.css';
+import { TodoContext } from '../TodoContext';
 
-function CreateToDoButton({ setOpenModal }) {
+function CreateToDoButton() {
+    const { addToDo } = React.useContext(TodoContext);
+
     return (
         <button 
             className="CreateToDoButton"
-            onClick={() => setOpenModal(prevState => !prevState)}
+            onClick={() => addToDo()}
             aria-label="Create Task"
         >
             Create Task
         </button>
     );
 }
-
-CreateToDoButton.propTypes = {
-    setOpenModal: PropTypes.func.isRequired,
-};
 
 export { CreateToDoButton };
